@@ -34,20 +34,69 @@
 </head>
 <body>
 
-    <h1>Botões de Rolagem (somente aparência)</h1>
-    <p>Estes botões não fazem nada ao serem clicados, pois não há JavaScript para programar a ação de rolagem. Eles são apenas estilizados com HTML e CSS.</p>
-
-    <div class="scroll-buttons">
-        <button class="scroll-button">Subir</button>
-        <button class="scroll-button">Descer</button>
-    </div>
-
-</body>
-</html
-    <title>Honda XR 300: A Moto Perfeita para Aventura e Desempenho</title>
-    <link rel="stylesheet" href="style.css">
+ <title>Botões de Subir e Descer</title>
+    <style>
+        #container {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            position: relative;
+        }
+        #content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: top 0.3s;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+
+<div>
+    <button onclick="moveUp()">Subir</button>
+    <button onclick="moveDown()">Descer</button>
+</div>
+
+<div id="container">
+    <div id="content">
+        <p>Este é o conteúdo que pode subir ou descer.</p>
+    </div>
+</div>
+
+<script>
+    var content = document.getElementById("content");
+    var position = 0;  // A posição inicial
+
+    function moveUp() {
+        if (position > -100) {  // Evitar que suba além do limite
+            position -= 10; // Subir 10px
+            content.style.top = position + "px";
+        }
+    }
+
+    function moveDown() {
+        if (position < 0) {  // Evitar que desça além do limite
+            position += 10; // Descer 10px
+            content.style.top = position + "px";
+        }
+    }
+</script>
+
+</body>
+</html>
+   
     <header>
         <h1>Honda XR 300: A Moto Perfeita para Aventura e Desempenho</h1>
     </header>
