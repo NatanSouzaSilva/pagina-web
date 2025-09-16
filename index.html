@@ -38,7 +38,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir e Descer Texto</title>
+ 
+    <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões de Subir e Descer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,30 +53,43 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-color: #f0f0f0;
             flex-direction: column;
-            text-align: center;
-        }
-
-        #text {
-            font-size: 24px;
-            margin: 20px;
-            transition: transform 0.3s ease-in-out;
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 15px;
             cursor: pointer;
             background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
 
         button:hover {
             background-color: #45a049;
+            transform: translateY(-3px);
         }
+
+        button:active {
+            background-color: #388e3c;
+            transform: translateY(1px);
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        #text {
+            font-size: 24px;
+            margin-top: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
     </style>
 </head>
 <body>
@@ -83,7 +102,7 @@
     </div>
 
     <script>
-        let position = 0;  // posição inicial do texto
+        let position = 0;  // Posição inicial
 
         function moveUp() {
             position -= 20;  // Subir o texto em 20px
@@ -95,6 +114,9 @@
             document.getElementById("text").style.transform = `translateY(${position}px)`;
         }
     </script>
+
+</body>
+</html>
 
 </body>
 </html>
