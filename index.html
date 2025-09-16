@@ -33,30 +33,41 @@
     </style>
 </head>
 <body>
-
- <title>Botões de Subir e Descer</title>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir e Descer Texto</title>
     <style>
-        #container {
-            width: 200px;
-            height: 200px;
-            border: 1px solid #ccc;
-            overflow: hidden;
-            position: relative;
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
         }
-        #content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: top 0.3s;
+
+        #text {
+            font-size: 24px;
+            margin: 20px;
+            transition: transform 0.3s ease-in-out;
         }
+
         button {
+            padding: 10px 20px;
+            font-size: 16px;
             margin: 10px;
-            padding: 10px;
+            cursor: pointer;
             background-color: #4CAF50;
             color: white;
             border: none;
-            cursor: pointer;
+            border-radius: 5px;
         }
+
         button:hover {
             background-color: #45a049;
         }
@@ -64,38 +75,30 @@
 </head>
 <body>
 
-<div>
     <button onclick="moveUp()">Subir</button>
     <button onclick="moveDown()">Descer</button>
-</div>
 
-<div id="container">
-    <div id="content">
-        <p>Este é o conteúdo que pode subir ou descer.</p>
+    <div id="text">
+        Este é o texto que pode subir e descer!
     </div>
-</div>
 
-<script>
-    var content = document.getElementById("content");
-    var position = 0;  // A posição inicial
+    <script>
+        let position = 0;  // posição inicial do texto
 
-    function moveUp() {
-        if (position > -100) {  // Evitar que suba além do limite
-            position -= 10; // Subir 10px
-            content.style.top = position + "px";
+        function moveUp() {
+            position -= 20;  // Subir o texto em 20px
+            document.getElementById("text").style.transform = `translateY(${position}px)`;
         }
-    }
 
-    function moveDown() {
-        if (position < 0) {  // Evitar que desça além do limite
-            position += 10; // Descer 10px
-            content.style.top = position + "px";
+        function moveDown() {
+            position += 20;  // Descer o texto em 20px
+            document.getElementById("text").style.transform = `translateY(${position}px)`;
         }
-    }
-</script>
+    </script>
 
 </body>
 </html>
+
    
     <header>
         <h1>Honda XR 300: A Moto Perfeita para Aventura e Desempenho</h1>
